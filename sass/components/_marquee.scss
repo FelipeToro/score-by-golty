@@ -1,0 +1,106 @@
+@use '../abstract/var' as var;
+@use '../abstract/mixins' as mix;
+
+/*
+=============================================
+MARQUEE 1
+=============================================
+*/
+.section-3__part-2,
+.footer__marquee-2 {
+    font-family: 'bebas-neue-pro', sans-serif;
+    color: #111;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__marquee-2 {
+  height: 40vh;
+  @include mix.desktop() {
+    height: 60vh;
+  }
+}
+
+:root {
+    --marquee-width: 80vw;
+    --marquee-height: 30vh;
+    /* --marquee-elements: 12; */ /* defined with JavaScript */
+    --marquee-elements-displayed: 0.8;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 12s);
+  }
+  
+  .marquee {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    background-color: map-get(var.$colors, negro);
+    color: map-get(var.$colors, verde);
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-2 {
+    background-color: map-get(var.$colors, verde);
+    color: map-get(var.$colors, negro);
+  }
+  .marquee:before, .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, #2C2C2C 0%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, #2C2C2C 0%, transparent 100%);
+  }
+  .marquee-2:before {
+    left: 0;
+    background: linear-gradient(to right, #DBFF00 0%, transparent 100%);
+  }
+  .marquee-2:after {
+    right: 0;
+    background: linear-gradient(to left, #DBFF00 0%, transparent 100%);
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+  }
+  /* .marquee-content:hover {
+    animation-play-state: paused;
+  } */
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+  }
+  .marquee-content h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: min(max(3.4rem, 14vw), 20rem);
+    white-space: nowrap;
+    border-top: 1px solid map-get(var.$colors, verde);
+    border-bottom: 1px solid map-get(var.$colors, verde);
+  }
+  
+  
+  @media (max-width: 600px) {
+     
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 0.36;
+    }
+    .marquee:before, .marquee:after { width: 5rem; }
+  }

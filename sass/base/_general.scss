@@ -1,0 +1,17 @@
+@use '../abstract/mixins' as mix;
+
+.container {
+    width: 90%;
+    max-width: 118.75rem;
+    margin: 0 auto;
+}
+
+.balon {
+    font-size: 2rem;
+    @include mix.laptop() {
+        font-size: 3rem;
+    }
+    @include mix.desktop() {
+        font-size: 6rem;
+    }
+}

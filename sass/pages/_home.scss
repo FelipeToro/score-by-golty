@@ -1,0 +1,493 @@
+@use '../abstract/var' as var;
+@use '../abstract/mixins' as mix;
+
+/*
+=============================================
+HERO SECTION
+=============================================
+*/
+.hero {
+    width: 100%;
+    padding-top: 6em;
+    background-color: map-get(var.$colors, blanco);
+    @include mix.desktop() {
+        padding-top: 12em;
+    }
+    &__wrapper {
+        text-align: center;
+    }
+    &__text {
+        padding: 1em 0;
+        @include mix.desktop() {
+            padding: 2em 0;
+        }
+    }
+    &__title {
+        box-shadow:
+            2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
+        background-color: map-get(var.$colors, verde);
+        transform: rotate(-10deg);
+        padding: 0.1em 0;
+    }
+    &__text {
+        background-color: map-get(var.$colors, verde);
+    }
+    // &__title span:nth-child(2) {
+    //     -webkit-text-stroke: 1px map-get(var.$colors, negro);
+    //     -webkit-text-fill-color: map-get(var.$colors, verde);
+    // }
+    // &__title span:nth-child(3) {
+    //     color: map-get(var.$colors, gris);
+    // }
+    &__year {
+        @include mix.flex(row, nowrap, space-between, center);
+    }
+    // &__line {
+    //     width: 50%;
+    //     height: 1px;
+    //     background-color: black;
+    // }
+    &__number {
+    }
+    &__copy {
+        line-height: 1;
+        font-size: min(max(1.4rem, 2.6vw), 2.8rem);
+    }
+}
+/*
+=============================================
+SECTION 1
+=============================================
+*/
+.section-1 {
+    background-color: map-get(var.$colors, blanco);
+    padding-bottom: 3em;
+    @include mix.tablet() {
+        padding-bottom: 6em;
+    }
+    @include mix.desktop() {
+    padding-bottom: 14em;
+    }
+
+    &__phbig {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4em 0;
+        @include mix.desktop() {
+            padding: 10em 0;
+            line-height: 1.1
+        }
+    }
+    &__ph2 {
+        max-width: 24em;
+        text-align: center;
+    }
+
+    &__jumbo {
+        position: relative;
+        padding: 4em 0;
+        @include mix.desktop() {
+            padding: 12em 0;
+        }
+    }
+    &__title {
+        text-align: center;
+        // -webkit-text-stroke: 1px map-get(var.$colors, negro);
+        // -webkit-text-fill-color: map-get(var.$colors, blanco);
+        @include mix.desktop() {
+            -webkit-text-stroke: 2px map-get(var.$colors, negro);
+        }
+    }
+    &__title::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 2.2em;
+        height: 1px;
+        background-color: map-get(var.$colors, negro);
+        @include mix.desktop() {
+            top: 150px;
+        }
+    }
+    &__girl-basket {
+        @include mix.desktop() {
+            @include mix.flex(row, nowrap, space-evenly, flex-star);
+
+        }
+    }
+    &__girl-text {
+        @include mix.desktop() {
+            flex-basis: 40%;
+        }
+        
+    }
+    &__girl-title {
+        -webkit-text-stroke: 1px map-get(var.$colors, negro);
+        -webkit-text-fill-color: map-get(var.$colors, blanco);
+        @include mix.desktop() {
+            margin: 0;
+            line-height: 0.8;
+            -webkit-text-stroke: 2px;
+        }
+    }
+    &__ph {
+        margin: 1.6em 0;
+        @include mix.tablet() {
+            max-width: 30rem;
+        }
+    }
+    
+    &__girl-img {
+        @include mix.desktop() {
+            flex-basis: 50%;
+        }
+    }
+}
+/*
+=============================================
+SECTION 2
+=============================================
+*/
+.section-2 {
+    width: 100%;
+    background: radial-gradient(circle, rgba(198,1,1,1) 0%, rgba(193,0,0,1) 20%, rgba(112,1,1,1) 78%);
+    &__wrapper {
+        position: relative;
+        padding: 5em 0 0 0;
+        @include mix.tablet() {
+            padding: 7em 0 0 0;
+        }
+        @include mix.desktop() {
+            @include mix.flex(row, nowrap, space-evenly, center);
+            padding: 12em 0 0 0;
+        }
+    }
+    &__wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100px;
+        background-color: white;
+        @include mix.desktop() {
+            height: 600px;
+        }
+    }
+    &__text {
+        color: white;
+        @include mix.desktop() {
+            flex-basis: 30%;
+            text-align: right;
+        }
+    }
+    &__img {
+        @include mix.desktop() {
+            order: -1;
+            flex-basis: 60%;
+        }
+    }
+    &__ph {
+        margin: 2em 0 1em 0;
+        @include mix.desktop() {
+            margin: 2em 0 2em 4em;
+        }
+    }
+}
+/*
+=============================================
+LOCO SECTION
+=============================================
+*/
+.git {
+    background-color: map-get(var.$colors, negro);
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 4.5em;
+    @include mix.desktop() {
+        padding-bottom: 12em;
+    }
+
+    &__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    &__title,
+    &__title--dos,
+    &__title--tres,
+    &__title--cuatro {
+        font-size: clamp(1rem, 8vw, 12rem);
+        font-family: bebas-neue-pro, sans-serif;
+        text-align: center;
+        background-color: map-get(var.$colors, verde);
+        color: map-get(var.$colors, negro);
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    &__title--dos {
+        transform: rotate(12deg);
+    } 
+    &__title--cuatro {
+        transform: rotate(-12deg);
+    } 
+}
+/*
+=============================================
+SECTION 3
+=============================================
+*/
+.section-3 {
+    background-color: map-get(var.$colors, negro);
+    &__wrapper {
+        position: relative;
+    }
+    &__wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100px;
+        background-color: map-get(var.$colors, verde);
+        @include mix.desktop() {
+            top: 280px;
+            height: 600px;
+        }
+    } 
+    &__part-1 {
+        @include mix.desktop() {
+            @include mix.flex(row, nowrap, space-evenly, center);
+        }
+    }
+    &__left {
+        @include mix.desktop() {
+            flex-basis: 45%;
+        }
+    }
+    &__title {
+        color: map-get(var.$colors, verde);
+        margin-left: 8px;
+        @include mix.desktop() {
+            margin-left: 0;
+        }
+    }
+    &__part-2 {
+        display: flex;
+    }
+    &__right {
+        @include mix.flex(column, nowrap, flex-end, center);
+        @include mix.desktop() {
+            margin-top: 10em;
+            flex-basis: 50%;
+        }
+    }
+    &__ph {
+        color: map-get(var.$colors, blanco);
+        max-width: 500px;
+        text-align: center;
+        margin: 2em 0;
+        @include mix.tablet() {
+            margin: 4em 0;
+        }
+    }
+}
+/*
+=============================================
+SECTION 4
+=============================================
+*/
+.section-4 {
+    width: 100%;
+    background-color: map-get(var.$colors, verde);
+    padding: 3em 0;
+    @include mix.tablet() {
+        padding: 6em 0;
+    }
+    @include mix.desktop() {
+        padding: 12em 0;
+    }
+    &__part-1 {
+        @include mix.desktop() {
+            @include mix.flex(row, nowrap, space-between, flex-star);
+        }
+    }
+    &__text {
+        flex-basis: 40%;
+        @include mix.desktop() {
+            order: 2;
+            text-align: right;
+        }
+    }
+    &__title {
+        position: relative;
+        -webkit-text-stroke: 1px map-get(var.$colors, negro);
+        -webkit-text-fill-color: map-get(var.$colors, verde);
+        @include mix.desktop() {
+            order: 2;
+            text-align: right;
+            -webkit-text-stroke: 2px;
+        }
+    }
+    &__title::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 2.2em;
+        height: 1px;
+        background-color: map-get(var.$colors, negro);
+        @include mix.desktop() {
+            top: -50px;
+            right: 0;
+        }
+    }
+    &__img {
+        flex-basis: 50%;
+    }
+    &__ph {
+        margin: 2em 0;
+        @include mix.desktop() {
+            margin: 2em 0 2em 7em;
+        }
+    }
+    &__part-2 {
+        position: relative;
+        margin-top: 2em;
+        @include mix.tablet() {
+            margin-top: 6em;
+        }
+    }
+    &__line {
+        width: 1px;
+        height: 100px;
+        background-color: map-get(var.$colors, negro);
+        position: absolute;
+        left: 10px;
+        @include mix.tablet() {
+            height: 200px;
+            left: 20px;
+        }
+        @include mix.desktop() {
+            height: 600px;
+            left: 70px;
+        }
+    }
+    &__title-2 {
+        font-size: min(max(2rem, 10vw), 16rem);
+        opacity: 0.2;
+        max-width: 150px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        @include mix.tablet() {
+            left: 40px;
+        }
+        @include mix.desktop() {
+            top: 150px;
+            left: 150px;
+        }
+    }
+}
+/*
+=============================================
+PRODUCTOS
+=============================================
+*/
+.productos {
+    width: 100%;
+    background-color: map-get(var.$colors, blanco);
+    padding-top: 3em;
+    @include mix.desktop() {
+        padding-top: 8em;
+    }
+    &__text {
+        text-align: center;
+        padding: 4em 0;
+        position: relative;
+        @include mix.tablet() {
+            padding: 7em 0;
+        }
+        @include mix.desktop() {
+            padding: 12em 0;
+        }
+    }
+    &__text::before {
+        content: "";
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 200px;
+        height: 1px;
+        background-color: map-get(var.$colors, negro);
+        @include mix.tablet() {
+            top: 100px;
+            width: 400px;
+        }
+        @include mix.desktop() {
+            top: 200px;
+            width: 700px;
+        }
+    }
+    &__title {
+        margin-bottom: .3em;
+        @include mix.desktop() {
+            margin-bottom: 0;
+        }
+    }
+    &__list {
+        display: grid;
+        gap: 1.6em;
+        padding-bottom: 4em;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+        @include mix.desktop() {
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 23rem), 1fr));
+            padding-bottom: 12em;
+            gap: 4em;
+        }
+    }
+    &__item {
+        background-color: map-get(var.$colors, blanco);
+        border: map-get(var.$colors, negro) 1px solid;
+        padding: 0.6em;
+        transition: all .5s ease;
+        @include mix.tablet() {
+            padding: 1em;
+        }
+    }
+    &__item:hover {
+        @include mix.desktop() {
+        transform: translate(-20px, -20px);
+        background-color: map-get(var.$colors, blanco);
+        box-shadow:
+            2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
+            padding: 0;
+            border: none;
+        }
+    }
+    &__item:hover > h6 {
+        color: red;
+    }
+    &__item img:hover {
+        mix-blend-mode:luminosity;
+    }
+    &__item-title {
+        margin-top: 0.2em;   
+    }
+}

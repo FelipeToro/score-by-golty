@@ -1,0 +1,23 @@
+@mixin flex($dir, $wrap, $just, $align) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin tablet() {
+    @media screen and (min-width:481px) {
+        @content
+    }
+}
+
+@mixin laptop() {
+    @media screen and (min-width:769px) {
+        @content
+    }
+}
+@mixin desktop() {
+    @media screen and (min-width:1024px) {
+        @content
+    }
+}

@@ -1,0 +1,194 @@
+@use '../abstract/var' as var;
+@use '../abstract/mixins' as mix;
+
+/*
+=============================================
+HEADER
+=============================================
+*/
+
+.header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: map-get(var.$colors, blanco);
+    padding: .7em 0;
+    border-bottom: map-get(var.$colors, negro) 1px solid;
+    color: map-get(var.$colors, negro);
+    transition: background-color .5s ease;
+    
+    &--active {
+        background-color: map-get(var.$colors, negro);
+        color: map-get(var.$colors, verde);
+        overflow: hidden;
+    }
+    .flex {
+        @include mix.flex(row, wrap, space-between, center);
+    }
+
+    &__left-side {
+        @include mix.flex(row, nowrap, flex-end, center);
+    }
+
+    &__coleccion {
+        display: none;
+        @include mix.tablet() {
+            display: block;
+            font-size: 1.4rem;
+            margin-right: 1em;
+            opacity: 1;
+            transition: opacity .5s ease;
+
+            &--active {
+                opacity: 0;
+            }
+        }
+    }
+
+    /* BOTÓN MENÚ */
+    &__hamburger-menu {
+        width: 2.4em;
+        height: 2.4em;
+        background-color: map-get(var.$colors, negro);
+        border: map-get(var.$colors, verde) 1.5px solid;
+        border-radius: 50%;
+        @include mix.flex(column, nowrap, center, center);
+        cursor: pointer;
+        transition: all .5s ease;
+        
+        &--active {
+            background-color: map-get(var.$colors, verde);
+            @include mix.desktop() {
+                width: 4em;
+                height: 4em;
+            }
+        }
+    }
+
+    &__bar {
+        width: 1.2rem;
+        height: 3px;
+        background-color: map-get(var.$colors, verde);
+        position: relative;
+        transition: background-color .5s ease;
+    }
+    &__bar::before,
+    &__bar::after {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: map-get(var.$colors, verde);
+        transition: all .5s ease;
+    }
+    &__bar::before {
+        top: .4rem;
+    }
+    &__bar::after {
+        top: -.4rem;
+    }
+    .open &__bar {
+        background-color: transparent;
+    }
+    .open &__bar::before {
+        top: 0;
+        transform: rotate(135deg);
+        background-color: map-get(var.$colors, negro);
+        @include mix.desktop() {
+            width: 2rem;
+            left: -8px;
+        }
+
+    }
+    .open &__bar::after {
+        top: 0;
+        transform: rotate(-135deg);
+        background-color: map-get(var.$colors, negro);
+        @include mix.desktop() {
+            width: 2rem;
+            left: -8px;
+        }
+    }
+
+    /* Nav */
+    &__nav {
+        width: 100%;
+        @include mix.flex(column, nowrap, center, center);
+        opacity: 0;
+        height: 0vh;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        &--active {
+            opacity: 1;
+            height: 90vh;
+        }
+    }
+    &__li {
+        margin: 0.9em 0;
+        width: 100vw;
+        background-color: map-get(var.$colors, verde);
+        transform: rotate(-8deg);
+    }
+    &__li:nth-child(even) {
+        background-color: map-get(var.$colors, negro);
+        border-top: map-get(var.$colors, verde) 1px solid;
+        border-bottom: map-get(var.$colors, verde) 1px solid;
+    }
+    &__li:nth-child(odd) {
+        color: map-get(var.$colors, negro);
+    }
+    &__a {
+        text-align: center;
+        font-family: bebas-neue-pro, sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        @include mix.tablet() {
+            font-size: 3rem;
+        }
+        @include mix.desktop() {
+            font-size: 4rem;
+            transition: all .5s ease;
+        }
+    }
+    &__a:hover {
+        @include mix.desktop() {
+            width: 100vw;
+            -webkit-text-stroke: 1.2px map-get(var.$colors, negro);
+            -webkit-text-fill-color: map-get(var.$colors, verde);
+            font-size: 5rem;
+        }
+    }
+    /* Nav social */
+    &__nav-social-list {
+        @include mix.flex(row, nowrap, center, center);
+        @include mix.laptop() {
+            margin-top: 1em;
+        }
+    }
+    &__nav-social-item {
+        margin: 0 0.9em;
+    }
+    &__nav-social-link {
+        font-size: 1.2rem;
+        color: map-get(var.$colors, verde);
+        transition: transform .5s ease;
+    }
+    &__nav-social-link:hover {
+        transform: scale(1.5);
+    }
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
