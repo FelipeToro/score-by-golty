@@ -117,6 +117,56 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*
+=============================================
+INTRO
+=============================================
+*/
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #DBFF00;
+  top: 0%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.logo-intro {
+  max-width: 200px;
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 769px) {
+  .logo-intro {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .logo-intro {
+    max-width: 500px;
+    margin-bottom: 2em;
+  }
+}
+
+.overlay h3 {
+  text-align: center;
+  color: #2C2C2C;
+}
+@media screen and (min-width: 1024px) {
+  .overlay h3 {
+    font-size: 4rem;
+  }
+}
+
+/*
+=============================================
+CONTAINER
+=============================================
+*/
 .container {
   width: 90%;
   max-width: 118.75rem;
@@ -773,19 +823,10 @@ HERO SECTION
   background-color: #DBFF00;
   transform: rotate(-10deg);
   padding: 0.1em 0;
+  color: #2C2C2C;
 }
 .hero__text {
   background-color: #DBFF00;
-}
-.hero__year {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.hero__copy {
-  line-height: 1;
-  font-size: min(max(1.4rem, 2.6vw), 2.8rem);
 }
 
 /*

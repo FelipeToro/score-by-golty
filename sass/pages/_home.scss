@@ -33,30 +33,10 @@ HERO SECTION
         background-color: map-get(var.$colors, verde);
         transform: rotate(-10deg);
         padding: 0.1em 0;
+        color: map-get(var.$colors, negro);
     }
     &__text {
         background-color: map-get(var.$colors, verde);
-    }
-    // &__title span:nth-child(2) {
-    //     -webkit-text-stroke: 1px map-get(var.$colors, negro);
-    //     -webkit-text-fill-color: map-get(var.$colors, verde);
-    // }
-    // &__title span:nth-child(3) {
-    //     color: map-get(var.$colors, gris);
-    // }
-    &__year {
-        @include mix.flex(row, nowrap, space-between, center);
-    }
-    // &__line {
-    //     width: 50%;
-    //     height: 1px;
-    //     background-color: black;
-    // }
-    &__number {
-    }
-    &__copy {
-        line-height: 1;
-        font-size: min(max(1.4rem, 2.6vw), 2.8rem);
     }
 }
 /*

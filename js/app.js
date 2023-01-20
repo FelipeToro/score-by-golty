@@ -1,4 +1,42 @@
 //======================================
+//ANIMACIÓN INTRO
+//======================================
+TweenMax.to(".overlay", 2, {
+  delay: 1,
+  top: "-100%",
+  ease: Expo.easeInOut
+})
+
+TweenMax.to(".logo-intro", 2, {
+  opacity: 0,
+  y: -60,
+  ease: Expo.easeInOut
+})
+
+TweenMax.to(".overlay h3", 2, {
+  delay: .3,
+  opacity: 0,
+  y: -60,
+  ease: Expo.easeInOut
+})
+
+TweenMax.from(".hero__title", 1, {
+  delay: 2.2,
+  opacity: 0,
+  y: -100,
+  ease: Expo.easeInOut
+})
+
+TweenMax.from(".hero__img", 1, {
+  delay: 2.6,
+  opacity: 0,
+  y: 100,
+  ease: Expo.easeInOut
+})
+
+
+
+//======================================
 //ANIMACIÓN DEL MENÚ DE NAVEGACIÓN
 //======================================
 
