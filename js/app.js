@@ -1,6 +1,13 @@
 //======================================
 //ANIMACIÓN INTRO
 //======================================
+TweenMax.from(".header", 1.1, {
+  delay: 2.2,
+  opacity: 0,
+  y: -100,
+  ease: Expo.easeInOut
+})
+
 TweenMax.to(".overlay", 2, {
   delay: 1,
   top: "-100%",

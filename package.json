@@ -1,0 +1,19 @@
+{
+  "name": "web-score",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "pro": "parcel build index.html"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "locomotive-scroll": "^4.1.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

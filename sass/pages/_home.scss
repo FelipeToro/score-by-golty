@@ -45,6 +45,7 @@ SECTION 1
 =============================================
 */
 .section-1 {
+    z-index: 999;
     background-color: map-get(var.$colors, blanco);
     padding-bottom: 3em;
     @include mix.tablet() {
@@ -76,24 +77,22 @@ SECTION 1
             padding: 12em 0;
         }
     }
-    &__title {
+    &__title,
+    &__title-2 {
         text-align: center;
         // -webkit-text-stroke: 1px map-get(var.$colors, negro);
         // -webkit-text-fill-color: map-get(var.$colors, blanco);
-        @include mix.desktop() {
-            -webkit-text-stroke: 2px map-get(var.$colors, negro);
-        }
     }
     &__title::before {
         content: "";
         position: absolute;
-        top: 50px;
+        top: -10px;
         left: 0;
         width: 2.2em;
         height: 1px;
         background-color: map-get(var.$colors, negro);
         @include mix.desktop() {
-            top: 150px;
+            top: -20px;
         }
     }
     &__girl-basket {
@@ -136,6 +135,7 @@ SECTION 2
 =============================================
 */
 .section-2 {
+    z-index: -1;
     width: 100%;
     background: radial-gradient(circle, rgba(198,1,1,1) 0%, rgba(193,0,0,1) 20%, rgba(112,1,1,1) 78%);
     &__wrapper {
@@ -162,17 +162,22 @@ SECTION 2
         }
     }
     &__text {
-        color: white;
+        color: map-get(var.$colors, blanco);
         @include mix.desktop() {
             flex-basis: 30%;
             text-align: right;
         }
     }
     &__img {
+        opacity: 0;
+        transition: opacity 3s;
         @include mix.desktop() {
             order: -1;
             flex-basis: 60%;
         }
+    }
+    .trans-1 {
+        opacity: 1;
     }
     &__ph {
         margin: 2em 0 1em 0;
@@ -422,9 +427,21 @@ PRODUCTOS
     }
     &__title {
         margin-bottom: .3em;
+        opacity: 0;
+        transition: opacity 3s;
         @include mix.desktop() {
             margin-bottom: 0;
         }
+    }
+    .opac-0 {
+        opacity: 1;
+    }
+    &__subtitle {
+        opacity: 0;
+        transition: opacity 4s;
+    }
+    .opac-1 {
+        opacity: 1;
     }
     &__list {
         display: grid;

@@ -15,7 +15,7 @@ HEADER
     right: 0;
     width: 100%;
     background-color: map-get(var.$colors, blanco);
-    padding: .7em 0;
+    padding: .4em 0;
     border-bottom: map-get(var.$colors, negro) 1px solid;
     color: map-get(var.$colors, negro);
     transition: background-color .5s ease;

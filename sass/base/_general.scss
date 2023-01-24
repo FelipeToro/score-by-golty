@@ -59,3 +59,16 @@ CONTAINER
         font-size: 6rem;
     }
 }
+
+.custom-p {
+    opacity: 0;
+    transition: opacity 3s;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.scroll-class {
+    opacity: 1;
+}
+
+
