@@ -19,6 +19,8 @@
     <!-- FAVICON -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="img/favicon.png" rel="apple-touch-icon">
+    <!-- LOCOMOTIVE STYLES -->
+    <link rel="stylesheet" href="/css/locomotive-scroll.css">
     <!-- CSS STYLES -->
     <link rel="stylesheet" href="css/styles.css">
     <title>Score by Golty | Deporte para todos</title>
@@ -383,15 +385,21 @@
         </footer>
     </main>
     <!-- Locomotive Scroll Animation -->
-    <script src="js/index.js"></script>
+    <script>
+        import LocomotiveScroll from 'locomotive-scroll';
+
+        const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+        });
+    </script>
+    <script src="js/locomotive-scroll.min.js"></script>
+    <script>
+        (function () {
+            var scroll = new LocomotiveScroll();
+        })();
+    </script>
     <!-- General JavaScript -->
     <script src="js/app.js"></script>
-    <!-- Header Effect -->
-    <script src="js/headroom.min.js"></script>
-    <script>
-        var cabecera = document.querySelector('.header');
-        var headroom = new Headroom(cabecera);
-        headroom.init();
-    </script>
 </body>
 </html>
