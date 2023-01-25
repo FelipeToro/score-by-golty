@@ -803,6 +803,10 @@ FOOTER
     transform: translateX(20px);
   }
 }
+.footer__terminos p {
+  font-size: 0.8rem;
+  display: inline-block;
+}
 
 /*
 =============================================
@@ -1042,7 +1046,7 @@ LOCO SECTION
   text-align: center;
   background-color: #DBFF00;
   color: #2C2C2C;
-  padding: 1rem 2rem;
+  padding: 1.4rem 2rem;
   text-transform: uppercase;
   white-space: nowrap;
   display: inline-block;

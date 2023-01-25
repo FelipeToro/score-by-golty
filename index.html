@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="img/favicon.png" rel="apple-touch-icon">
     <!-- LOCOMOTIVE STYLES -->
-    <link rel="stylesheet" href="/css/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet"></link>
     <!-- CSS STYLES -->
     <link rel="stylesheet" href="css/styles.css">
     <title>Score by Golty | Deporte para todos</title>
@@ -132,8 +132,8 @@
                 </h2>
             </div>
             <div class="section-1__girl-basket">
-                <div class="section-1__girl-text">
-                    <h2 data-scroll data-scroll-direction="vertical" data-scroll-speed="2" class="section-1__girl-title">
+                <div data-scroll data-scroll-direction="vertical" data-scroll-speed="2" class="section-1__girl-text">
+                    <h2 class="section-1__girl-title">
                         <span>EN ESTE JUEGO</span>
                         <span>ENTRAN TODOS</span>
                     </h2>
@@ -202,7 +202,7 @@
                             <h2 data-scroll data-scroll-speed="4" data-scroll-class="trans-1" class="section-3__title">SCORE BY GOLTY ES PARA TODOS</h2>
                         </div>
                         <div data-scroll data-scroll-speed="1" class="section-3__right">
-                            <p class="section-3__ph">Nos sentimos preparados para la lucha, no importa quién seas o de dónde vengas, este juego es de todos, porque el deporte no solo es pasión, es vida, amor y vitalidad; porque creemos en la unión y transformación y sabemos que en el deporte todos importan y que en las cancha todos entran.
+                            <p class="section-3__ph">Nos sentimos preparados para la lucha; no importa quién seas o de dónde vengas, este juego es de todos, porque el deporte no solo es pasión, es vida, amor y vitalidad; porque creemos en la unión y transformación y sabemos que en el deporte todos importan y que en las cancha todos entran.
                             </p>
                             <img src="img/calzado-score-by-golty.png" alt="Calzado Score By Golty">
                         </div>
@@ -226,8 +226,8 @@
             <div class="container">
                 <div class="section-4__wrapper">
                     <div class="section-4__part-1">
-                        <div class="section-4__text">
-                            <h2 data-scroll data-scroll-speed="3" class="section-4__title">DEPORTE SIN LÍMITES</h2>
+                        <div data-scroll data-scroll-speed="3" class="section-4__text">
+                            <h2 class="section-4__title">DEPORTE SIN LÍMITES</h2>
                             <p class="section-4__ph">El deporte es calidad y rendimiento, sin importar en donde lo juegues das tu máximo y muestras todo tu potencial, dejas cuerpo y alma dentro de cada una de las canchas, canchas que son fieles testigos que para alcanzar las metas solo importa tu pasión, porque han experimentado que para hacer deporte solo se necesita Score by Golty.</p>
                             <button class="button button--hyperion">
                                 <a href="https://golty.com.co/score-by-golty/" target="_blank">
@@ -257,9 +257,9 @@
                 <div class="productos__wrapper">
                     <div class="productos__text">
                         <h3 data-scroll data-scroll-class="opac-0" class="productos__title">NUESTROS PRODUCTOS</h3>
-                        <h5 data-scroll data-scroll-class="opac-1" class="productos__subtitle">TODOS NUESTROS PRODUCTOS AL MEJOR PRECIO</h5>
+                        <h5 data-scroll data-scroll-class="opac-1" class="productos__subtitle">CONSÍGUELOS AL MEJOR PRECIO</h5>
                     </div>
-                    <div data-scroll data-scroll-speed="1" class="productos__list">
+                    <div class="productos__list">
                         <div class="productos__item">
                             <a href="https://golty.com.co/product/guayo-caucho-score-by-golty/" target="_blank">
                                 <img src="img/golty-calzado-score-by-golty.jpg" alt="Calzado Score By Golty">
@@ -355,6 +355,11 @@
                                     <p class="footer__cel">313 271 8613</p>
                                 </div>
                             </div>
+                            <div class="footer__terminos">
+                                <a href="https://golty.com.co/terminos-y-condiciones/" target="_blank">
+                                    <p>Términos y condiciones</p>
+                                </a>
+                            </div>
                         </div>
                         <div class="footer__nav">
                             <div class="footer__nav-title">COLECCIÓN 2023</div>
@@ -385,21 +390,9 @@
         </footer>
     </main>
     <!-- Locomotive Scroll Animation -->
-    <script>
-        import LocomotiveScroll from 'locomotive-scroll';
-
-        const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-        });
-    </script>
-    <script src="js/locomotive-scroll.min.js"></script>
-    <script>
-        (function () {
-            var scroll = new LocomotiveScroll();
-        })();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <!-- General JavaScript -->
     <script src="js/app.js"></script>
+    
 </body>
 </html>

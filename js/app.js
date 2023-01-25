@@ -1,3 +1,4 @@
+
 //======================================
 //ANIMACIÓN INTRO
 //======================================
@@ -73,3 +74,14 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for(let i=0; i<marqueeElementsDisplayed; i++) {
   marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
+
+//======================================
+//LOCOMOTIVE
+//======================================
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true,
+  tablet: { smooth: true },
+  smartphone: { smooth: true },
+  multiplier: 1.1
+});
