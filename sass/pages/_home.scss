@@ -169,7 +169,7 @@ SECTION 2
         }
     }
     &__img {
-        opacity: 0;
+        // opacity: 0;
         transition: opacity 3s;
         @include mix.desktop() {
             order: -1;
@@ -343,9 +343,6 @@ SECTION 4
     }
     &__ph {
         margin: 2em 0;
-        @include mix.desktop() {
-            margin: 2em 0 2em 7em;
-        }
     }
     &__part-2 {
         position: relative;
@@ -391,7 +388,6 @@ PRODUCTOS
 =============================================
 */
 .productos {
-    width: 100%;
     background-color: map-get(var.$colors, blanco);
     padding-top: 3em;
     @include mix.desktop() {
@@ -427,7 +423,7 @@ PRODUCTOS
     }
     &__title {
         margin-bottom: .3em;
-        opacity: 0;
+        // opacity: 0;
         transition: opacity 3s;
         @include mix.desktop() {
             margin-bottom: 0;
@@ -437,7 +433,7 @@ PRODUCTOS
         opacity: 1;
     }
     &__subtitle {
-        opacity: 0;
+        // opacity: 0;
         transition: opacity 4s;
     }
     .opac-1 {
@@ -461,6 +457,7 @@ PRODUCTOS
         transition: all .5s ease;
         @include mix.tablet() {
             padding: 1em;
+            place-self: center;
         }
     }
     &__item:hover {

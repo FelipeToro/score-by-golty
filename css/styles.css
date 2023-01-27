@@ -203,6 +203,7 @@ h1, h2 {
   font-size: min(max(3.4rem, 14vw), 20rem);
   font-weight: 600;
   line-height: 0.85;
+  font-style: italic;
 }
 
 h3 {
@@ -210,6 +211,7 @@ h3 {
   font-size: min(max(1.8rem, 6vw), 8rem);
   font-weight: 600;
   line-height: 1;
+  font-style: italic;
 }
 
 h4 {
@@ -220,12 +222,14 @@ h4 {
 h5 {
   font-family: bebas-neue-pro, sans-serif;
   font-size: min(max(1.4rem, 2.4vw), 3.2rem);
+  font-style: italic;
 }
 
 h6 {
   font-family: bebas-neue-pro, sans-serif;
   font-size: min(max(2rem, 2.8vw), 3.2rem);
   font-weight: 600;
+  font-style: italic;
 }
 
 p {
@@ -236,7 +240,7 @@ p {
 }
 
 .button > a {
-  font-family: bebas-neue-pro;
+  font-family: bebas-neue-pro, sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -271,7 +275,7 @@ p {
 }
 
 .button--hyperion {
-  font-family: input-mono-narrow, monospace;
+  font-family: bebas-neue-pro, sans-serif;
   font-weight: 500;
   padding: 1rem 1.5rem;
   border: 1px solid #2C2C2C;
@@ -997,7 +1001,6 @@ SECTION 2
   }
 }
 .section-2__img {
-  opacity: 0;
   transition: opacity 3s;
 }
 @media screen and (min-width: 1024px) {
@@ -1203,11 +1206,6 @@ SECTION 4
 .section-4__ph {
   margin: 2em 0;
 }
-@media screen and (min-width: 1024px) {
-  .section-4__ph {
-    margin: 2em 0 2em 7em;
-  }
-}
 .section-4__part-2 {
   position: relative;
   margin-top: 2em;
@@ -1262,7 +1260,6 @@ PRODUCTOS
 =============================================
 */
 .productos {
-  width: 100%;
   background-color: #f8f8f8;
   padding-top: 3em;
 }
@@ -1309,7 +1306,6 @@ PRODUCTOS
 }
 .productos__title {
   margin-bottom: 0.3em;
-  opacity: 0;
   transition: opacity 3s;
 }
 @media screen and (min-width: 1024px) {
@@ -1321,7 +1317,6 @@ PRODUCTOS
   opacity: 1;
 }
 .productos__subtitle {
-  opacity: 0;
   transition: opacity 4s;
 }
 .productos .opac-1 {
@@ -1349,6 +1344,7 @@ PRODUCTOS
 @media screen and (min-width: 481px) {
   .productos__item {
     padding: 1em;
+    place-self: center;
   }
 }
 @media screen and (min-width: 1024px) {

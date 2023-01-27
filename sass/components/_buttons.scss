@@ -1,7 +1,7 @@
 @use '../abstract/var' as var;
 
 .button > a {
-    font-family: bebas-neue-pro;
+    font-family: map-get(var.$family-type, bebas), sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -41,7 +41,7 @@
 }
 
 .button--hyperion {
-	font-family: input-mono-narrow, monospace;
+	font-family: map-get(var.$family-type, bebas), sans-serif;
 	font-weight: 500;
 	padding: 1rem 1.5rem;
 	border: 1px solid map-get(var.$colors, negro);

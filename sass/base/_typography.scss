@@ -5,6 +5,7 @@ h1, h2 {
     font-size: map-get(var.$size-type, jumbo-size);
     font-weight: 600;
     line-height: 0.85;
+    font-style: italic;
 }
 
 
@@ -13,6 +14,7 @@ h3 {
     font-size: map-get(var.$size-type, sub-title-size);
     font-weight: 600;
     line-height: 1;
+    font-style: italic;
 }
 
 h4 {
@@ -23,12 +25,14 @@ h4 {
 h5 {
     font-family: map-get(var.$family-type, bebas), sans-serif;
     font-size: map-get(var.$size-type, ph2-size);
+    font-style: italic;
 }
 
 h6 {
     font-family: map-get(var.$family-type, bebas), sans-serif;
     font-size: map-get(var.$size-type, title-size);
     font-weight: 600;
+    font-style: italic;
 }
 
 p {
