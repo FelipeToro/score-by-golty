@@ -1,6 +1,10 @@
 @use '../abstract/var' as var;
 @use '../abstract/mixins' as mix;
 
+body {
+    overflow-x: hidden;
+}
+
 /*
 =============================================
 INTRO
