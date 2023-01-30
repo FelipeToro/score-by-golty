@@ -2,7 +2,7 @@
 @use '../abstract/mixins' as mix;
 
 body {
-    overflow-x: hidden;
+    background-color: map-get(var.$colors, verde);
 }
 
 /*
